@@ -1,0 +1,22 @@
+{
+  "name": "rakudou",
+  "version": "1.0.0",
+  "description": "落道 - YouTube mp3 Downloader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hiro527/rakudou.git"
+  },
+  "author": "Hiro527",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hiro527/rakudou/issues"
+  },
+  "homepage": "https://github.com/Hiro527/rakudou#readme",
+  "dependencies": {
+    "ytdl-core": "^4.9.2"
+  }
+}
