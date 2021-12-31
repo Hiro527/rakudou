@@ -9,3 +9,4 @@
 ## 必要条件
 - Node.js >= 16.13.0
 - npm >= 8.1.2
+- ffmpeg >= 4.4.1-full_build
