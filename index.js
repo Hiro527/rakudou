@@ -87,7 +87,8 @@ const download = async () => {
         const downloaded = tracker.audio.downloaded + tracker.video.downloaded;
         const total = tracker.audio.total + tracker.video.total;
         const progress = Math.floor(downloaded / total * 100)
-        process.stdout.write(`${progress}% | ${Math.floor(downloaded / 1024 / 1024)}MB / ${Math.floor(total / 1024 / 1024)}MB - ${('00' + Math.floor(timePassed / 3600)).slice(-2)}:${('00' + Math.floor(timePassed / 60) % 60).slice(-2)}:${('00' + (timePassed % 60) % 60).slice(-2)}`);
+        process.stdout.write(`${('00' + progress).slice(-3)}% [${'='.repeat(progress >= 5 ? Math.floor(progress / 5) - 1 : 0)}>${' '.repeat((20 - (Math.floor(progress / 5))))}]  |  ${('00' + Math.floor(timePassed / 3600)).slice(-2)}:${('00' + Math.floor(timePassed / 60) % 60).slice(-2)}:${('00' + (timePassed % 60) % 60).slice(-2)}`)
+        process.stdout.write(`  |  ${Math.floor(downloaded / 1024 / 1024)}MB of ${Math.floor(total / 1024 / 1024)}MB`)
         readline.moveCursor(process.stdout, 0);
     }, 100)
     audio.pipe(ffmpeg.stdio[4])
