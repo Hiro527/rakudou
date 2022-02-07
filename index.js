@@ -25,7 +25,7 @@ console.log(`
 const download = async () => {
     const videoInfo = await ytdl.getInfo(url);
     const date = new Date();
-    const fileName = `${videoInfo.videoDetails.title}_${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`.replaceAll('/', ' ');
+    const fileName = `${videoInfo.videoDetails.title}_${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`.replace(/\//g, ' ');
     const videoSec = videoInfo.videoDetails.lengthSeconds;
     console.log('%s | %s - %s', videoInfo.videoDetails.title, videoInfo.videoDetails.author.name, `${('00' + Math.floor(videoSec / 3600)).slice(-2)}:${('00' + Math.floor(videoSec / 60) % 60).slice(-2)}:${('00' + (videoSec % 60) % 60).slice(-2)}`);
     let startTime = 0;
