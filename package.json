@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Hiro527/rakudou#readme",
   "dependencies": {
+    "@distube/ytdl-core": "^4.16.12",
     "eslint": "^8.8.0",
     "ytdl-core": "npm:@distube/ytdl-core@^4.16.11"
   }
